@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-import { connect } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { logIn } from '../Store/Actions';
-import mapStateToProps from '../Store/State';
+
+
 
 import * as yup from 'yup'
 import styled from 'styled-components'
 
 // form schema
-import { signInFormSchema } from './FormSchema/signInFormSchema';
+// import { signInFormSchema } from './FormSchema/signInFormSchema';
 
 
 // initial state
@@ -46,7 +44,7 @@ const SignIn = (props) => {
     // }, [formValues])
 
     // history hook
-    const history = useHistory();
+    // const history = useHistory();
 
     // event handlers
 
@@ -95,7 +93,7 @@ const SignIn = (props) => {
     return (
         <StyledSignIn>
         <form className='form container' onSubmit={onSubmit}>
-            <h3>Sign In</h3>
+            <h3>Sign In for Instructors</h3>
         <div className='form inputs'>
         <label>
             <span>Username: </span><input
@@ -121,8 +119,8 @@ const SignIn = (props) => {
            <button>Sign In</button>
         </div>
         </form>
-        {props.isLoggedIn && props.role === 'DINER' ? history.push('/diner/home') : null }
-        {props.isLoggedIn && props.role === 'TRUCKOPERATOR' ? history.push('/operator/home') : null }
+        {/* {props.isLoggedIn && props.role === 'DINER' ? history.push('/diner/home') : null }
+        {props.isLoggedIn && props.role === 'TRUCKOPERATOR' ? history.push('/operator/home') : null } */}
         </StyledSignIn>
     );
 
@@ -165,5 +163,6 @@ padding: 3em 5em 5em 5em;
   }
 
 `
+export default SignIn
 
-export default connect(mapStateToProps, { logIn })(SignIn);
+// export default connect(mapStateToProps, { logIn })(SignIn);

@@ -8,5 +8,8 @@ export const signInFormSchema = yup.object().shape({
     password: yup
         .string()
         .required('Please enter a password')
-        .min(8, 'Password must be at least 8 characters')
+        .min(8, 'Password must be at least 8 characters'),
+    instructorcode: yup
+    .string()
+    .required('Please enter the instructor code')
 })
