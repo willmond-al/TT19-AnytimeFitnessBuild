@@ -87,7 +87,7 @@ const SignUp = () => {
     return (
         <div>
             <SignUpPage>
-            <h1>Sign Up!</h1>
+            <h1>Sign Up as an Instructor!</h1>
             <div className='inputField'>
                 <label className='error'>{signUpErrors.username}</label>
                 <label className='error'>{signUpErrors.password}</label>

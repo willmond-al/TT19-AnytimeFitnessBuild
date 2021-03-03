@@ -118,7 +118,7 @@ const SignUp = () => {
                 </label>
             </div>
 
-            <div className='inputField'>
+            {/* <div className='inputField'>
                 <label>Diner
                     <input 
                         name='radio'
@@ -135,10 +135,10 @@ const SignUp = () => {
                         value={signUpForm}
                     />
                 </label>
-            </div>
+            </div> */}
 
             <div className='inputField'>
-                <button className='signUpButton' disabled={disabled}>Sign Up</button>
+                <button className='signUpButton'>Sign Up</button>
             </div>
             </SignUpPage>
             {/* build sign up form with:
