@@ -3,7 +3,7 @@ import * as yup from 'yup';
 import styled from 'styled-components'
 
 // form schema
-// import { signUpFormSchema } from './FormSchema/signUpFormSchema';
+// import { signUpFormSchema } from '';
 
 const SignUpPage = styled.div`
   padding: 3em 5em 5em 5em;

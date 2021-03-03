@@ -7,20 +7,20 @@ import * as yup from 'yup'
 import styled from 'styled-components'
 
 // form schema
-// import { signInFormSchema } from './FormSchema/signInFormSchema';
+import { signInFormSchema } from '../SignUpSignIn/InstructorSignInForm';
 
 
 // initial state
-// const initialDisabled = true
+const initialDisabled = true
 
-// const initialFormValues = {
-//     username: "",
-//     password: "",
-// }
-// const initialFormErrors = {
-//     username: "",
-//     password: "", 
-// }
+const initialFormValues = {
+    username: "",
+    password: "",
+}
+const initialFormErrors = {
+    username: "",
+    password: "", 
+}
 
 const initialSignInData = {
   username: '',
@@ -31,17 +31,17 @@ const initialSignInData = {
 const SignIn = (props) => {
 
     // component state
-    // const [disabled, setDisabled] = useState(initialDisabled)
-    // const [formValues, setFormValues] = useState(initialFormValues)
-    // const [formErrors, setFormErrors] = useState(initialFormErrors)
+    const [disabled, setDisabled] = useState(initialDisabled)
+    const [formValues, setFormValues] = useState(initialFormValues)
+    const [formErrors, setFormErrors] = useState(initialFormErrors)
     const [signInData, setSignInData] = useState(initialSignInData);
 
 
-    // useEffect(()=>{
-    //     signInFormSchema.isValid(formValues).then((valid)=>{
-    //         setDisabled(!valid)
-    //     })
-    // }, [formValues])
+    useEffect(()=>{
+        signInFormSchema.isValid(formValues).then((valid)=>{
+            setDisabled(!valid)
+        })
+    }, [formValues])
 
     // history hook
     // const history = useHistory();

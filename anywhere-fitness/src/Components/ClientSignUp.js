@@ -3,7 +3,7 @@ import * as yup from 'yup';
 import styled from 'styled-components'
 
 // form schema
-// import { signUpFormSchema } from './FormSchema/signUpFormSchema';
+import { signUpFormSchema } from '../SignUpSignIn/ClientSignUpForm';
 
 const SignUpPage = styled.div`
   padding: 3em 5em 5em 5em;
@@ -57,18 +57,18 @@ const SignUp = () => {
     const inputChange = (event) => {
         const {name, value} = event.target;
 
-        // yup.reach(signUpFormSchema, name)
-        //     .validate(value)
-        //     .then(valid => {
-        //         setSignUpErrors({
-        //             ...signUpErrors, [name]:''
-        //         })
-        //     })
-        //     .catch(error => {
-        //         setSignUpErrors({
-        //             ...signUpErrors, [name]: error.errors
-        //         })
-        //     })
+        yup.reach(signUpFormSchema, name)
+            .validate(value)
+            .then(valid => {
+                setSignUpErrors({
+                    ...signUpErrors, [name]:''
+                })
+            })
+            .catch(error => {
+                setSignUpErrors({
+                    ...signUpErrors, [name]: error.errors
+                })
+            })
             setSignUpForm({
                 ...signUpForm,
                 [name]:value
