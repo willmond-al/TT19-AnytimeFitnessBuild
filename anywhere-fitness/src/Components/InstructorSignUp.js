@@ -6,9 +6,9 @@ import styled from 'styled-components'
 // import { signUpFormSchema } from '';
 
 const SignUpPage = styled.div`
-  padding: 3em 5em 5em 5em;
   max-width: 100%;
-  height:82vh;
+  padding:1em;
+  height:40vh;
   h1 {
     text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
   }

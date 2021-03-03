@@ -4,18 +4,28 @@ import ClientSignUp from './Components/ClientSignUp'
 import ClientSignIn from './Components/ClientSignIn'
 import InstSignUp from './Components/InstructorSignUp'
 import InstSignIn from './Components/InstructorSignIn'
+import styled from 'styled-components'
+
 
 function App() {
   return (
-    <div className="App">
+    <StyledApp>
       Sign in!
     <ClientSignIn/>
     <InstSignIn/>
-    Make an account
+    Make an account!
     <ClientSignUp/>
     <InstSignUp/>
-    </div>
+    </StyledApp>
   );
 }
+
+const StyledApp = styled.div`
+
+display: flex;
+justify-content: space-evenly;
+flex-wrap: wrap;
+
+`
 
 export default App;

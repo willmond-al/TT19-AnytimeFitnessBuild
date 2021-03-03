@@ -130,9 +130,9 @@ const SignIn = (props) => {
 
 const StyledSignIn = styled.div`
 
-padding: 3em 5em 5em 5em;
-  max-width: 100%;
-  height:82vh;
+max-width: 100%;
+padding:1em;
+  height:40vh;
   font-family: 'Open Sans', sans-serif;
 		font-size: 13pt;
 		color: #696969;
