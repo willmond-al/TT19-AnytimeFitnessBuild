@@ -5,17 +5,21 @@ import ClientSignIn from './Components/ClientSignIn'
 import InstSignUp from './Components/InstructorSignUp'
 import InstSignIn from './Components/InstructorSignIn'
 import styled from 'styled-components'
+import SignIn from './Components/ClientSignIn';
 
 
 function App() {
   return (
     <StyledApp>
-      Sign in!
+
+<div className="signin">
     <ClientSignIn/>
     <InstSignIn/>
-    Make an account!
+</div>
+<div className="signup">
     <ClientSignUp/>
     <InstSignUp/>
+</div>
     </StyledApp>
   );
 }
@@ -25,6 +29,7 @@ const StyledApp = styled.div`
 display: flex;
 justify-content: space-evenly;
 flex-wrap: wrap;
+width: 100%
 
 `
 

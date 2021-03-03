@@ -131,6 +131,7 @@ const SignIn = (props) => {
 const StyledSignIn = styled.div`
 
 max-width: 100%;
+/* width: 50%; */
 padding:1em;
   height:40vh;
   font-family: 'Open Sans', sans-serif;
