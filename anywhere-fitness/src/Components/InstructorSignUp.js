@@ -3,12 +3,12 @@ import * as yup from 'yup';
 import styled from 'styled-components'
 
 // form schema
-import { signUpFormSchema } from './FormSchema/signUpFormSchema';
+// import { signUpFormSchema } from '';
 
 const SignUpPage = styled.div`
-  padding: 3em 5em 5em 5em;
   max-width: 100%;
-  height:82vh;
+  padding:1em;
+  height:40vh;
   h1 {
     text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
   }
@@ -37,11 +37,13 @@ const SignUpPage = styled.div`
 const initialSignUpForm = {
     username: '',
     password: '',
+    instructorcode: ''
 };
 
 const initialSignUpErrors = {
     username: '',
     password: '',
+    instructorcode:''
 };
 
 const initialDisabled = true;
@@ -57,35 +59,35 @@ const SignUp = () => {
     const inputChange = (event) => {
         const {name, value} = event.target;
 
-        yup.reach(signUpFormSchema, name)
-            .validate(value)
-            .then(valid => {
-                setSignUpErrors({
-                    ...signUpErrors, [name]:''
-                })
-            })
-            .catch(error => {
-                setSignUpErrors({
-                    ...signUpErrors, [name]: error.errors
-                })
-            })
+        // yup.reach(signUpFormSchema, name)
+        //     .validate(value)
+        //     .then(valid => {
+        //         setSignUpErrors({
+        //             ...signUpErrors, [name]:''
+        //         })
+        //     })
+        //     .catch(error => {
+        //         setSignUpErrors({
+        //             ...signUpErrors, [name]: error.errors
+        //         })
+        //     })
             setSignUpForm({
                 ...signUpForm,
                 [name]:value
             })
     }
 
-    useEffect(() => {
-        signUpFormSchema.isValid(signUpForm)
-        .then(valid => {
-            setDisabled(!valid);
-        });
-    }, [signUpForm]);
+    // useEffect(() => {
+    //     signUpFormSchema.isValid(signUpForm)
+    //     .then(valid => {
+    //         setDisabled(!valid);
+    //     });
+    // }, [signUpForm]);
 
     return (
         <div>
             <SignUpPage>
-            <h1>Sign Up!</h1>
+            <h1>Sign Up as an Instructor!</h1>
             <div className='inputField'>
                 <label className='error'>{signUpErrors.username}</label>
                 <label className='error'>{signUpErrors.password}</label>
@@ -119,23 +121,18 @@ const SignUp = () => {
             </div>
 
             <div className='inputField'>
-                <label>Diner
-                    <input 
-                        name='radio'
-                        type='radio'
-                        value={signUpForm}
+                <label>Instructor Code: 
+                    <input
+                        name='instructorcode'
+                        type='text'
+                        value={signUpForm.instructorcode}
+                        onChange={inputChange}
+                        placeholder='Enter Instructor Code'
+                        className='textBox'
                     />
                 </label>
             </div>
-            <div className='inputField'>
-                <label>Operator
-                    <input 
-                        name='radio'
-                        type='radio'
-                        value={signUpForm}
-                    />
-                </label>
-            </div>
+
 
             <div className='inputField'>
                 <button className='signUpButton' disabled={disabled}>Sign Up</button>

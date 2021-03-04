@@ -3,12 +3,12 @@ import * as yup from 'yup';
 import styled from 'styled-components'
 
 // form schema
-import { signUpFormSchema } from './FormSchema/signUpFormSchema';
+import { signUpFormSchema } from '../SignUpSignIn/ClientSignUpForm';
 
 const SignUpPage = styled.div`
-  padding: 3em 5em 5em 5em;
   max-width: 100%;
-  height:82vh;
+  padding:1em;
+  height:40vh;
   h1 {
     text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
   }
@@ -75,12 +75,12 @@ const SignUp = () => {
             })
     }
 
-    useEffect(() => {
-        signUpFormSchema.isValid(signUpForm)
-        .then(valid => {
-            setDisabled(!valid);
-        });
-    }, [signUpForm]);
+    // useEffect(() => {
+    //     signUpFormSchema.isValid(signUpForm)
+    //     .then(valid => {
+    //         setDisabled(!valid);
+    //     });
+    // }, [signUpForm]);
 
     return (
         <div>
@@ -118,7 +118,7 @@ const SignUp = () => {
                 </label>
             </div>
 
-            <div className='inputField'>
+            {/* <div className='inputField'>
                 <label>Diner
                     <input 
                         name='radio'
@@ -135,10 +135,10 @@ const SignUp = () => {
                         value={signUpForm}
                     />
                 </label>
-            </div>
+            </div> */}
 
             <div className='inputField'>
-                <button className='signUpButton' disabled={disabled}>Sign Up</button>
+                <button className='signUpButton'>Sign Up</button>
             </div>
             </SignUpPage>
             {/* build sign up form with:

@@ -1,28 +1,26 @@
 import React, { useState, useEffect } from 'react';
 
-import { connect } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { logIn } from '../Store/Actions';
-import mapStateToProps from '../Store/State';
+
+
 
 import * as yup from 'yup'
 import styled from 'styled-components'
 
 // form schema
-import { signInFormSchema } from './FormSchema/signInFormSchema';
+import { signInFormSchema } from '../SignUpSignIn/InstructorSignInForm';
 
 
 // initial state
-// const initialDisabled = true
+const initialDisabled = true
 
-// const initialFormValues = {
-//     username: "",
-//     password: "",
-// }
-// const initialFormErrors = {
-//     username: "",
-//     password: "", 
-// }
+const initialFormValues = {
+    username: "",
+    password: "",
+}
+const initialFormErrors = {
+    username: "",
+    password: "", 
+}
 
 const initialSignInData = {
   username: '',
@@ -33,20 +31,20 @@ const initialSignInData = {
 const SignIn = (props) => {
 
     // component state
-    // const [disabled, setDisabled] = useState(initialDisabled)
-    // const [formValues, setFormValues] = useState(initialFormValues)
-    // const [formErrors, setFormErrors] = useState(initialFormErrors)
+    const [disabled, setDisabled] = useState(initialDisabled)
+    const [formValues, setFormValues] = useState(initialFormValues)
+    const [formErrors, setFormErrors] = useState(initialFormErrors)
     const [signInData, setSignInData] = useState(initialSignInData);
 
 
-    // useEffect(()=>{
-    //     signInFormSchema.isValid(formValues).then((valid)=>{
-    //         setDisabled(!valid)
-    //     })
-    // }, [formValues])
+    useEffect(()=>{
+        signInFormSchema.isValid(formValues).then((valid)=>{
+            setDisabled(!valid)
+        })
+    }, [formValues])
 
     // history hook
-    const history = useHistory();
+    // const history = useHistory();
 
     // event handlers
 
@@ -95,7 +93,7 @@ const SignIn = (props) => {
     return (
         <StyledSignIn>
         <form className='form container' onSubmit={onSubmit}>
-            <h3>Sign In</h3>
+            <h3>Sign In for Instructors</h3>
         <div className='form inputs'>
         <label>
             <span>Username: </span><input
@@ -121,8 +119,8 @@ const SignIn = (props) => {
            <button>Sign In</button>
         </div>
         </form>
-        {props.isLoggedIn && props.role === 'DINER' ? history.push('/diner/home') : null }
-        {props.isLoggedIn && props.role === 'TRUCKOPERATOR' ? history.push('/operator/home') : null }
+        {/* {props.isLoggedIn && props.role === 'DINER' ? history.push('/diner/home') : null }
+        {props.isLoggedIn && props.role === 'TRUCKOPERATOR' ? history.push('/operator/home') : null } */}
         </StyledSignIn>
     );
 
@@ -130,9 +128,9 @@ const SignIn = (props) => {
 
 const StyledSignIn = styled.div`
 
-padding: 3em 5em 5em 5em;
-  max-width: 100%;
-  height:82vh;
+max-width: 100%;
+padding:1em;
+  height:40vh;
   font-family: 'Open Sans', sans-serif;
 		font-size: 13pt;
 		color: #696969;
@@ -165,5 +163,6 @@ padding: 3em 5em 5em 5em;
   }
 
 `
+export default SignIn
 
-export default connect(mapStateToProps, { logIn })(SignIn);
+// export default connect(mapStateToProps, { logIn })(SignIn);
