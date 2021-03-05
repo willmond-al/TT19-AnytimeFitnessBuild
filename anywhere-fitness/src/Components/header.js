@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const NavBar = () => {
     return (
         <StyledNavBar>
-            <div className='logo'>Food Truck Tracker</div>
+            <div className='logo'>Anywhere Fitness</div>
             <a href='/signin' onClick={() => {window.localStorage.clear();}}>Sign out</a>
         </StyledNavBar>
     );
@@ -13,7 +13,7 @@ const NavBar = () => {
 const StyledNavBar = styled.div`
 
 @import url("https://fonts.googleapis.com/css?family=Oleo+Script:400|Open+Sans:300,300italic,600,600italic,800");
-background:#0090c5;
+background:lemonchiffon;
 display:flex;
 justify-content:space-between;
 padding: 3%;
