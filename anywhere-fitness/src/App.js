@@ -5,12 +5,14 @@ import ClientSignIn from './Components/ClientSignIn'
 import InstSignUp from './Components/InstructorSignUp'
 import InstSignIn from './Components/InstructorSignIn'
 import styled from 'styled-components'
-import SignIn from './Components/ClientSignIn';
+import Header from './Components/header'
+import Footer from './Components/footer'
 
 
 function App() {
   return (
     <StyledApp>
+      <Header/>
 
 <div className="signin">
     <ClientSignIn/>
@@ -20,6 +22,7 @@ function App() {
     <ClientSignUp/>
     <InstSignUp/>
 </div>
+<Footer/>
     </StyledApp>
   );
 }
@@ -29,7 +32,8 @@ const StyledApp = styled.div`
 display: flex;
 justify-content: space-evenly;
 flex-wrap: wrap;
-width: 100%
+width: 100%;
+
 
 `
 
